@@ -70,12 +70,15 @@ set tabstop=4
 " On pressing tab, insert 4 spaces
  set expandtab
  " Map jj to esc key 
-:imap jj <Esc>
+imap jj <Esc>
 
 "---------NERD-TREE SETTINGS----------
+"nmap <silent> <leader>t :nerdtreetabstoggle<cr>
+"let g:nerdtree_tabs_open_on_console_startup = 1
+nmap <silent> fff :NERDTreeTabsToggle<CR>
+"---------NERD-TREE SETTINGS----------
 nmap <silent> <leader>t :NERDTreeTabsToggle<CR>
-let g:nerdtree_tabs_open_on_console_startup = 1
-
+nmap <silent> <leader>fff :NERDTreeTabsToggle<CR>
 "---------Copy & Paste----------------
 " Yank text to the OS X clipboard
 noremap <leader>y "*y
@@ -94,6 +97,10 @@ augroup mySyntastic
 augroup END
 
 
+"-------- TAGS SETTINGS --------------------------------
+"
+noremap tt :tab split<CR>
+"
 "-------- TAGS SETTINGS --------------------------------
 let g:easytags_events = ['BufReadPost', 'BufWritePost']
 let g:easytags_async = 1
